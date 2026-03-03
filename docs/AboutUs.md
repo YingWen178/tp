@@ -17,9 +17,11 @@ You can reach us at the email `seer[at]comp.nus.edu.sg`
 
 [[homepage](http://www.comp.nus.edu.sg/~damithch)]
 [[github](https://github.com/hxckjian)]
-[[portfolio](team/johndoe.md)]
+[[portfolio](team/hxckjian.md)]
 
 * Role: Developer
+* Project Responsibilities: Testing
+* Development Responsibilities: UI
 
 ### Jane Doe
 

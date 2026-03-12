@@ -2,7 +2,6 @@ package seedu.address.ui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import seedu.address.model.gamer.Gamer;
@@ -55,8 +54,5 @@ public class PersonCard extends UiPart<Region> {
         // region.setText(person.getRegion().fullRegion);
         // phone.setText(person.getPhone().value);
         // email.setText(person.getEmail().value);
-        // person.getTags().stream()
-        //         .sorted(Comparator.comparing(tag -> tag.tagName))
-        //         .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
     }
 }

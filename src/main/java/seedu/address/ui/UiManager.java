@@ -23,8 +23,9 @@ public class UiManager implements Ui {
     private static final Logger logger = LogsCenter.getLogger(UiManager.class);
     private static final String ICON_APPLICATION = "/images/blockbook_icon.png";
 
+    private final HostServices hostServices;
+
     private Logic logic;
-    private HostServices hostServices;
     private MainWindow mainWindow;
 
     /**

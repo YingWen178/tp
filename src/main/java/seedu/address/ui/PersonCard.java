@@ -48,7 +48,7 @@ public class PersonCard extends UiPart<Region> {
         this.gamer = gamer;
         id.setText(displayedIndex + ". ");
         name.setText(gamer.getName().fullName);
-        gamerTag.setText(gamer.getGamerTag().fullGamerTag);
+        gamerTag.setText("Gamertag: " + gamer.getGamerTag().fullGamerTag);
         // region.setText(person.getRegion().fullRegion);
         // phone.setText(person.getPhone().value);
         // email.setText(person.getEmail().value);

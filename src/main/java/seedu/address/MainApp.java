@@ -69,7 +69,8 @@ public class MainApp extends Application {
     }
 
     /**
-     * Returns a {@code ModelManager} with the data from {@code storage}'s block book contacts.json and {@code userPrefs}. <br>
+     * Returns a {@code ModelManager} with the data from {@code storage}'s block book contacts.json
+     * and {@code userPrefs}. <br>
      * or an empty block book data will be used instead if errors occur when reading {@code storage}'s block book data.
      */
     private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {

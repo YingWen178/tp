@@ -38,11 +38,33 @@ public class ParserUtil {
      */
     public static Name parseName(String name) throws ParseException {
         requireNonNull(name);
-        String trimmedName = name.trim();
-        if (!Name.isValidName(trimmedName)) {
+        String normalizedName = normalizeName(name);
+        if (!Name.isValidName(normalizedName)) {
             throw new ParseException(Name.MESSAGE_CONSTRAINTS);
         }
-        return new Name(trimmedName);
+        return new Name(normalizedName);
+    }
+
+    /**
+     * Normalizes the given name by trimming, collapsing multiple spaces, and applying capitalization.
+     */
+    private static String normalizeName(String name) {
+        String collapsed = name.trim().replaceAll("\\s+", " ");
+        StringBuilder builder = new StringBuilder(collapsed.length());
+        boolean capitalizeNext = true;
+        for (int i = 0; i < collapsed.length(); i++) {
+            char currentChar = collapsed.charAt(i);
+            if (Character.isLetter(currentChar)) {
+                builder.append(capitalizeNext
+                        ? Character.toUpperCase(currentChar)
+                        : Character.toLowerCase(currentChar));
+                capitalizeNext = false;
+            } else {
+                builder.append(currentChar);
+                capitalizeNext = currentChar == ' ' || currentChar == '-' || currentChar == '\'';
+            }
+        }
+        return builder.toString();
     }
 
     /**

@@ -84,4 +84,12 @@ public class AddCommandParserTest {
         assertParseFailure(parser, PREAMBLE_NON_EMPTY + NAME_DESC_BOB + GAMERTAG_DESC_BOB,
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
     }
+
+    @Test
+    public void parse_nameNormalization_success() {
+        String userInput = " " + PREFIX_NAME + "aLiCe   pauLINE " + PREFIX_GAMERTAG + "gamer_tag";
+        Gamer expectedGamer = new GamerBuilder().withName("Alice Pauline").withGamerTag("gamer_tag").build();
+
+        assertParseSuccess(parser, userInput, new AddCommand(expectedGamer));
+    }
 }
